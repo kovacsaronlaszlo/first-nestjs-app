@@ -1,0 +1,11 @@
+docker commnd postgres:
+docker run --name postgres-nest -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
+
+check container run:
+docker container ls
+
+stop a container:
+docker container stop postgres-nest
+
+delete (not do that) container:
+docker container rm postgres-nest

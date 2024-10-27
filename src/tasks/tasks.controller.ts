@@ -12,6 +12,7 @@ import {
   Query,
 } from '@nestjs/common';
 import { TasksService } from './tasks.service';
+import { Task } from './task.entity';
 
 @Controller('tasks')
 export class TasksController {
@@ -30,6 +31,10 @@ export class TasksController {
   // getTaskById(@Param('id') id: string): Task {
   //   return this.tasksService.getTaskById(id);
   // }
+  @Get(':/id')
+  async getTaskById(@Param('id') id: string): Promise<Task> {
+    return this.tasksService.getTaskById(id);
+  }
 
   // @Post()
   // createTask(@Body() createTaskDto: CreateTaskDto): Task {

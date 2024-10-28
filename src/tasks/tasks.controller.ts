@@ -38,17 +38,17 @@ export class TasksController {
     return this.tasksService.createTask(createTaskDto);
   }
 
-  // @Delete('/:id')
-  // deleteTask(@Param('id') id: string): void {
-  //   return this.tasksService.deleteTask(id);
-  // }
+  @Delete('/:id')
+  deleteTask(@Param('id') id: string): Promise<void> {
+    return this.tasksService.deleteTask(id);
+  }
 
-  // @Patch('/:id/status')
-  // updateTaskStatus(
-  //   @Param('id') id: string,
-  //   @Body() updatetaskStatusDto: UpdateTaskStatusDto,
-  // ): Task {
-  //   const { status } = updatetaskStatusDto;
-  //   return this.tasksService.updateTaskStatus(id, status);
-  // }
+  @Patch('/:id/status')
+  updateTaskStatus(
+    @Param('id') id: string,
+    @Body() updatetaskStatusDto: UpdateTaskStatusDto,
+  ): Promise<Task> {
+    const { status } = updatetaskStatusDto;
+    return this.tasksService.updateTaskStatus(id, status);
+  }
 }

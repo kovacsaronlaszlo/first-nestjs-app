@@ -19,7 +19,6 @@ export class AuthService {
   }
 
   async signUp(authCredentialsDto: AuthCredentialsDto): Promise<void> {
-    console.log('service', authCredentialsDto);
     return this.createUser(authCredentialsDto);
   }
 }
